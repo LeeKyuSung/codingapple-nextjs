@@ -1,4 +1,4 @@
-import { connectDB } from "./../util/database";
+import { connectDB } from "@/util/database";
 import Link from "next/link";
 import DetailLink from "./DetailLink";
 
@@ -15,7 +15,8 @@ export default async function Forum() {
             <Link href={`/forum/${글._id}`}>
               <h4>{글.title}</h4>
             </Link>
-            <DetailLink />
+            {/* <DetailLink /> */}
+            <Link href={`/forum/edit/${글._id}`}> 편집 </Link>
           </div>
         );
       })}
