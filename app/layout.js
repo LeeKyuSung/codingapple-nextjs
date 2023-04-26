@@ -16,6 +16,8 @@ export default function RootLayout({ children }) {
         <div className="navbar">
           <Link href="/">홈</Link>
           <Link href="/list">상품목록</Link>
+          <Link href="/cart">장바구니</Link>
+          <Link href="/forum">게시판</Link>
         </div>
         {children}
       </body>
