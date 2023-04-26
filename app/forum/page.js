@@ -2,6 +2,8 @@ import { connectDB } from "@/util/database";
 import ListItem from "./ListItem";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function Forum() {
   const client = await connectDB;
   const db = client.db("forum");
