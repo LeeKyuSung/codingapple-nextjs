@@ -1,6 +1,6 @@
 import { connectDB } from "@/util/database";
+import ListItem from "./ListItem";
 import Link from "next/link";
-import DetailLink from "./DetailLink";
 
 export default async function Forum() {
   const client = await connectDB;
@@ -9,17 +9,8 @@ export default async function Forum() {
 
   return (
     <div className="list-bg">
-      {result.map((글, i) => {
-        return (
-          <div className="list-item" key={i}>
-            <Link href={`/forum/${글._id}`}>
-              <h4>{글.title}</h4>
-            </Link>
-            {/* <DetailLink /> */}
-            <Link href={`/forum/edit/${글._id}`}> 편집 </Link>
-          </div>
-        );
-      })}
+      <Link href="/forum/write">게시물 작성</Link>
+      <ListItem result={result} />
     </div>
   );
 }
