@@ -25,6 +25,7 @@ export default async function RootLayout({ children }) {
           <Link href="/cart">장바구니</Link>
           <Link href="/forum">게시판</Link>
           {session ? <LogoutBtn></LogoutBtn> : <LoginBtn></LoginBtn>}
+          <Link href="/register">회원가입</Link>
         </div>
         {children}
       </body>
