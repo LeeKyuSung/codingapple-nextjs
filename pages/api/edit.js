@@ -18,7 +18,7 @@ export default async function handler(요청, 응답) {
         }
       );
       console.log(result);
-      return 응답.status(200).redirect(`/nextjs/forum/${요청.body._id}`);
+      return 응답.status(200).redirect(`/forum/${요청.body._id}`);
     } catch (e) {
       return 응답.status(500).json({ message: e.message });
     }

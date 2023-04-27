@@ -11,7 +11,7 @@ export default async function Write(props) {
   return (
     <div className="p-20">
       <h2>수정페이지</h2>
-      <form action="/nextjs/api/edit" method="post">
+      <form action="/api/edit" method="post">
         <input type="text" name="title" defaultValue={result.title} required />
         <input
           type="text"
