@@ -14,7 +14,7 @@ export default function ListItem({ result }) {
             <Link href={`/forum/edit/${글._id}`}> 편집 </Link>
             <span
               onClick={(e) => {
-                fetch(`/api/forum/${글._id}`, {
+                fetch(`/nextjs/api/forum/${글._id}`, {
                   method: "DELETE",
                 }).then((res) => {
                   if (res.ok) {

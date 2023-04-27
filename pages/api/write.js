@@ -8,7 +8,7 @@ export default async function handler(요청, 응답) {
     try {
       const db = (await connectDB).db("forum");
       let result = await db.collection("post").insertOne(요청.body);
-      return 응답.status(200).redirect(`/forum/${result.insertedId}`);
+      return 응답.status(200).redirect(`/nextjs/forum/${result.insertedId}`);
     } catch (e) {
       return 응답.status(500).json({ message: e.message });
     }
