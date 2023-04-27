@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import LoginBtn from "./LoginBtn";
+import LogoutBtn from "./LogoutBtn";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
@@ -23,7 +24,7 @@ export default async function RootLayout({ children }) {
           <Link href="/list">상품목록</Link>
           <Link href="/cart">장바구니</Link>
           <Link href="/forum">게시판</Link>
-          <LoginBtn></LoginBtn>
+          {session ? <LogoutBtn></LogoutBtn> : <LoginBtn></LoginBtn>}
         </div>
         {children}
       </body>
