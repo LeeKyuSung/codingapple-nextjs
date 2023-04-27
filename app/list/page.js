@@ -10,7 +10,7 @@ export default function List() {
       {상품.map((상품, i) => {
         return (
           <div className="food" key={i}>
-            <img src={`/food${i}.png`} className="food-img"></img>
+            <img src={`/nextjs/food${i}.png`} className="food-img"></img>
             <h4>
               {i} {상품} $40
             </h4>
