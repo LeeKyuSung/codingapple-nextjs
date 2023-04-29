@@ -38,16 +38,18 @@ export default function Comment(props) {
               comment: comment,
               _id: props._id,
             }),
-          })
-            .then((res) => {
-              if (res.status == 200) {
-                return res.json();
-              }
-            })
-            .then((res) => {
-              setData([...data, res]);
-              setComment("");
-            });
+          }).then((res) => {
+            if (res.status == 200) {
+              res.json().then((res) => {
+                setData([...data, res]);
+                setComment("");
+              });
+            } else {
+              res.json().then((res) => {
+                alert(res.message);
+              });
+            }
+          });
         }}
       >
         댓글 등록
